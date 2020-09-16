@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Presentation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+      overflow: hidden;
+      font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+
+    #content,
+    #content>div {
+      display: block;
+      height: 100vw;
+      width: 100vh;
+      position: relative
+    }
+
+    #content::-webkit-scrollbar {
+      display: none
+    }
+
+    #content {
+      -webkit-tap-highlight-color: transparent;
+      -moz-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      counter-reset: section;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      white-space: nowrap;
+      overscroll-behavior-y: none;
+      -webkit-transform: rotateZ(-90deg) translateX(-100%);
+      -ms-transform: rotateZ(-90deg) translateX(-100%);
+      transform: rotateZ(-90deg) translateX(-100%);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-scroll-snap-points-y: repeat(75px);
+      -ms-scroll-snap-points-y: repeat(75px);
+      scroll-snap-points-y: repeat(75px);
+      -webkit-scroll-snap-type: y mandatory;
+      -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      -webkit-transform-origin: top left;
+      -ms-transform-origin: top left;
+      transform-origin: top left
+    }
+
+    #content>div {
+      scroll-snap-align: start
+    }
+
+    #content>div>div {
+      background: repeating-linear-gradient(90deg, transparent 0 23px, rgba(104, 44, 55, .3) 23px 24px), repeating-linear-gradient(180deg, transparent 0 23px, rgba(104, 44, 55, .3) 23px 24px), linear-gradient(135deg, #7a8ea2 0 24px, #6d8195 25px 48px, #607488 49px 72px, #53677b 73px 96px, #465a6e 97px 120px, #394d61 121px 144px, #2c4054 145px 168px, #1f3347 169px 192px, #12263a 193px 216px, #05192d 217px 240px, transparent 241px 264px), linear-gradient(45deg, #7a8ea2 0 24px, #6d8195 25px 48px, #607488 49px 72px, #53677b 73px 96px, #465a6e 97px 120px, #394d61 121px 144px, #2c4054 145px 168px, #1f3347 169px 192px, #12263a 193px 216px, #05192d 217px 240px, transparent 241px 264px), linear-gradient(-135deg, #7a8ea2 0 24px, #6d8195 25px 48px, #607488 49px 72px, #53677b 73px 96px, #465a6e 97px 120px, #394d61 121px 144px, #2c4054 145px 168px, #1f3347 169px 192px, #12263a 193px 216px, #05192d 217px 240px, transparent 241px 264px), linear-gradient(-45deg, #7a8ea2 0 24px, #6d8195 25px 48px, #607488 49px 72px, #53677b 73px 96px, #465a6e 97px 120px, #394d61 121px 144px, #2c4054 145px 168px, #1f3347 169px 192px, #12263a 193px 216px, #05192d 217px 240px, transparent 241px 264px), #111;
+      -webkit-transform: rotateZ(90deg) translateY(-100%);
+      -ms-transform: rotate(90deg) translateY(-100%);
+      transform: rotateZ(90deg) translateY(-100%);
+      height: 100vh;
+      width: 100vw;
+      -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+      transform-origin: left top;
+      position: relative;
+      overflow: hidden
+    }
+
+    #content>div>div::before {
+      position: absolute;
+      counter-increment: section;
+      content: counter(section)
+    }
+
+    h1 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      font-size: 1.5em;
+      border: 4px solid #9ca9b4;
+      background: #656e96;
+      border-radius: 4px 4px 0 0;
+      color: #fff;
+      text-align: center
+    }
+
+    h1::before {
+      clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+    }
+
+    h1::after {
+      clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    h1::after,
+    h1::before {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      height: 24px;
+      background: #9ca9b4;
+      content: "";
+      margin: 0 auto;
+    }
+
+    img,svg,
+    p {
+      padding-top: 36px
+    }
+
+    ul {
+      list-style: square;
+      text-align: left;
+      padding: 0;
+      margin: 36px;
+    }
+
+    a {
+      line-height: 36px
+    }
+
+    li,
+    p {
+      font-size: 24px;
+      line-height: 1.5;
+      margin: 0 24px;
+      text-align: justify;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    p:first-child {
+      padding-top: 0
+    }
+
+    .mapwrp {
+      padding: 12px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      height: 100%;
+    }
+
+    .map.overf {
+      overflow: visible;
+    }
+
+    .map.overf p {
+      padding: 0;
+    }
+
+    .map {
+      margin: 12px auto 24px;
+      max-width: 864px;
+      white-space: initial;
+      color: #000;
+      background: #fff;
+      text-align: center;
+      min-height: 480px;
+      -webkit-box-shadow: 0 0 10px 0 #000;
+      box-shadow: 0 0 10px 0 #000;
+      border-radius: 4px;
+      padding-bottom: 36px;
+      background: -o-repeating-linear-gradient(transparent 0, transparent 35px, #eee 35px, #eee 36px) 0 0, -o-repeating-linear-gradient(left, #fff 0, #fff 35px, #eee 35px, #eee 36px) 0 0;
+      background: repeating-linear-gradient(transparent 0, transparent 35px, #eee 35px, #eee 36px) 0 0, repeating-linear-gradient(90deg, #fff 0, #fff 35px, #eee 35px, #eee 36px) 0 0
+    }
+
+    span:empty {
+      background: 0 0 !important;
+      -webkit-animation: none !important;
+      animation: none !important
+    }
+
+    #spiner,
+    #spiner:after,
+    #spiner:before {
+      border: 2px solid transparent;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto
+    }
+
+    #spiner {
+      height: 50px;
+      width: 50px;
+      border-top: 2px solid rgba(122, 2, 79, .7);
+      border-bottom: 2px solid rgba(122, 2, 79, .7);
+      text-align: center;
+      -webkit-animation: spin 1s steps(6, start) infinite;
+      animation: spin 1s steps(6, start) infinite
+    }
+
+    #spiner:after {
+      height: 40px;
+      width: 40px;
+      border-top: 2px solid rgba(169, 49, 126, .7);
+      border-bottom: 2px solid rgba(169, 49, 126, .7);
+      content: "";
+      -webkit-animation: spin 2s steps(12, start) infinite;
+      animation: spin 2s steps(12, start) infinite
+    }
+
+    #spiner:before {
+      content: "";
+      height: 30px;
+      width: 30px;
+      border-top: 2px solid rgba(216, 96, 173, .7);
+      border-bottom: 2px solid rgba(216, 96, 173, .7);
+      -webkit-animation: spin 2s steps(9, start) infinite;
+      animation: spin 2s steps(9, start) infinite
+    }
+
+    div.hid {
+      display: none;
+      visibility: hidden
+    }
+
+    .hider {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      min-width: 100%;
+      min-height: 100%;
+      background: #eee;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      z-index: 2;
+    }
+
+    .hider span {
+      padding-top: 100px
+    }
+
+    .rodkl {
+      visibility: hidden;
+      opacity: .7;
+      position: absolute;
+      display: block;
+      padding: 16px;
+      top: 50%;
+      z-index: 1;
+      cursor: pointer;
+      filter: drop-shadow(0 0 1px #000);
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%)
+    }
+
+    body:hover .rodkl {
+      visibility: visible;
+    }
+
+    .rodkl::before {
+      content: "";
+      padding: 14px;
+      display: block;
+      top: 14px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg)
+    }
+
+    .rodkl:hover {
+      opacity: 1;
+      transition: .2s opacity
+    }
+
+    #krodyk::before {
+      border-bottom: 2px solid #eee;
+      border-left: 2px solid #eee
+    }
+
+    #drodyk::before {
+      border-right: 2px solid #eee;
+      border-top: 2px solid #eee
+    }
+
+    #krodyk {
+      left: 0
+    }
+
+    #drodyk {
+      right: 0
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      p,
+      li {
+        font-size: 16px;
+      }
+
+      .map {
+        padding: 4px;
+      }
+
+      #drunktext span {
+        text-align: center;
+        min-width: 24px;
+        min-height: 24px;
+        line-height: 24px;
+      }
+    }
+
+    .classGrid {
+      display: grid;
+      justify-items: center;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      text-align: left;
+      padding: 0 36px;
+    }
+
+    .classGrid>div {
+      width: 100%;
+      box-shadow: 0 0 0 1px #777;
+      padding: 10px;
+    }
+
+    .classGrid>div:nth-child(1),
+    .classGrid>div:nth-child(2) {
+      font-weight: 900;
+      text-align: center;
+    }
+
+
+    /* for map grid */
+    .wrap {
+      margin: 36px auto;
+      height: 0;
+      width: 50%;
+      padding-bottom: 35%;
+      position: relative
+    }
+
+    .wrap span {
+      font-size: 2em;
+      font-weight: 900;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      letter-spacing: 6px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      -webkit-text-stroke: 1px #333;
+      color: transparent;
+      pointer-events: none;
+    }
+
+    .grid-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(10, minmax(20px, 200px));
+      grid-template-rows: repeat(9, minmax(20px, 200px));
+      grid-template-areas: ". . . . . a5 a5 . . ."". a3 a3 a4 a4 a5 a5 a24 . .""a1 a3 a3 a4 a4 a6 a6 a22 a23 .""a2 a2 a7 a7 a8 a6 a6 a21 a21 a25""a2 a2 a7 a7 a9 a10 a10 a21 a21 a26"". . a11 a12 a12 a10 a10 a20 a20 ."". . . a12 a12 a15 a16 a20 a20 ."". . . a13 a14 a17 a17 a18 . a27"". . . . . a17 a17 a19 . ."
+    }
+
+    .grid-container>div {
+      background: #aaa;
+      transition: transform .2s;
+      cursor: pointer;
+    }
+
+    .grid-container>div:hover {
+      background: #eee;
+    }
+
+    .a1 {
+      grid-area: a1
+    }
+
+    .a2 {
+      grid-area: a2
+    }
+
+    .a3 {
+      grid-area: a3
+    }
+
+    .a4 {
+      grid-area: a4
+    }
+
+    .a5 {
+      grid-area: a5
+    }
+
+    .a6 {
+      grid-area: a6
+    }
+
+    .a7 {
+      grid-area: a7
+    }
+
+    .a8 {
+      grid-area: a8
+    }
+
+    .a9 {
+      grid-area: a9
+    }
+
+    .a10 {
+      grid-area: a10
+    }
+
+    .a11 {
+      grid-area: a11
+    }
+
+    .a12 {
+      grid-area: a12
+    }
+
+    .a13 {
+      grid-area: a13
+    }
+
+    .a14 {
+      grid-area: a14
+    }
+
+    .a15 {
+      grid-area: a15
+    }
+
+    .a16 {
+      grid-area: a16
+    }
+
+    .a17 {
+      grid-area: a17
+    }
+
+    .a18 {
+      grid-area: a18
+    }
+
+    .a19 {
+      grid-area: a19
+    }
+
+    .a20 {
+      grid-area: a20
+    }
+
+    .a21 {
+      grid-area: a21
+    }
+
+    .a22 {
+      grid-area: a22
+    }
+
+    .a23 {
+      grid-area: a23
+    }
+
+    .a24 {
+      grid-area: a24
+    }
+
+    .a25 {
+      grid-area: a25
+    }
+
+    .a26 {
+      grid-area: a26
+    }
+
+    .a27 {
+      grid-area: a27
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rodkl" id="krodyk">
+  </div>
+  <div class="rodkl" id="drodyk">
+  </div>
+  <div id="content" onclick="this.blur();">
+    <div>
+      <div>
+        <div class="mapwrp">
+          <div class="map">
+            <h1>Title 1</h1>
+            <p>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit aspernatur laboriosam
+                ipsa quae, eveniet doloremque molestiae est, corrupti illo possimus? Veritatis autem quo aperiam, fuga
+                est assumenda soluta doloribus?</span>
+              <span>Quisquam voluptatum labore nulla aspernatur at enim omnis officia consequatur quasi beatae quas
+                obcaecati, praesentium nam minus, ex ad. In, sapiente temporibus! Porro voluptas vero doloribus
+                temporibus error voluptate velit!</span>
+              <span>Laudantium, quaerat quasi est eaque aspernatur, aut magni corrupti ipsam perferendis distinctio
+                doloremque deleniti, vero laboriosam fugiat expedita tempora dolorem incidunt. Aspernatur, quo hic vero
+                numquam obcaecati nobis! Vel, iure.</span>
+              <span>Ad incidunt suscipit fugit sint perspiciatis minima, veniam aut quisquam corporis, optio iste,
+                beatae possimus similique aliquam nulla ab. Minus tempora itaque voluptatibus iste assumenda labore
+                dignissimos ipsam facilis nam?</span>
+              <span>Atque incidunt voluptate, aut reiciendis minima amet magnam tempora sint! Ab vel ipsum, ex laborum
+                inventore obcaecati rem mollitia maxime veritatis quis assumenda quam, tenetur repudiandae cupiditate
+                officiis. Consequatur, enim.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="mapwrp">
+          <div class="map">
+            <h1>Title 2</h1>
+            <p>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit aspernatur laboriosam
+                ipsa quae,
+                eveniet doloremque molestiae est, corrupti illo possimus? Veritatis autem quo aperiam, fuga est
+                assumenda soluta
+                doloribus?</span>
+              <span>Quisquam voluptatum labore nulla aspernatur at enim omnis officia consequatur quasi beatae quas
+                obcaecati,
+                praesentium nam minus, ex ad. In, sapiente temporibus! Porro voluptas vero doloribus temporibus error
+                voluptate
+                velit!</span>
+              <span>Laudantium, quaerat quasi est eaque aspernatur, aut magni corrupti ipsam perferendis distinctio
+                doloremque
+                deleniti, vero laboriosam fugiat expedita tempora dolorem incidunt. Aspernatur, quo hic vero numquam
+                obcaecati
+                nobis! Vel, iure.</span>
+              <span>Ad incidunt suscipit fugit sint perspiciatis minima, veniam aut quisquam corporis, optio iste,
+                beatae possimus
+                similique aliquam nulla ab. Minus tempora itaque voluptatibus iste assumenda labore dignissimos ipsam
+                facilis
+                nam?</span>
+              <span>Atque incidunt voluptate, aut reiciendis minima amet magnam tempora sint! Ab vel ipsum, ex laborum
+                inventore
+                obcaecati rem mollitia maxime veritatis quis assumenda quam, tenetur repudiandae cupiditate officiis.
+                Consequatur,
+                enim.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="mapwrp">
+          <div class="map">
+            <h1>Title 3</h1>
+            <ul>
+              <li>list1</li>
+              <li>list2</li>
+              <li>list3</li>
+              <li>list4</li>
+              <li>list5</li>
+              <li>list6</li>
+              <li>list7</li>
+              <li>list8</li>
+              <li>list9</li>
+              <li>list10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <div class="mapwrp">
+          <div class="map">
+            <h1>Title 4</h1>
+            <div class="wrap">
+              <div class="grid-container">
+                <div class="a1"></div>
+                <div class="a2"></div>
+                <div class="a3"></div>
+                <div class="a4"></div>
+                <div class="a5"></div>
+                <div class="a6"></div>
+                <div class="a7"></div>
+                <div class="a8"></div>
+                <div class="a9"></div>
+                <div class="a10"></div>
+                <div class="a11"></div>
+                <div class="a12"></div>
+                <div class="a13"></div>
+                <div class="a14"></div>
+                <div class="a15"></div>
+                <div class="a16"></div>
+                <div class="a17"></div>
+                <div class="a18"></div>
+                <div class="a19"></div>
+                <div class="a20"></div>
+                <div class="a21"></div>
+                <div class="a22"></div>
+                <div class="a23"></div>
+                <div class="a24"></div>
+                <div class="a25"></div>
+                <div class="a26"></div>
+                <div class="a27"></div>
+              </div>
+              <span>Lithuania</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <div class="mapwrp">
+          <div class="map">
+            <h1>Thank you</h1>
+<!-- svg -->
+<svg width="64mm" height="64mm" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(-79.7,-90.24)">
+    <g transform="matrix(.7758 0 0 .7758 17.87 34.57)">
+      <g>
+        <circle cx="120.9" cy="113" r="40.75" fill="#d35f5f" stroke="#000" stroke-linecap="round"
+          stroke-linejoin="bevel" style="paint-order:markers fill stroke" />
+        <path transform="scale(.2646)"
+          d="m339.1 416.4-2.3 1.5c0 89.1 59.5 134.4 119.3 134.5 59.8 0 119.4-45.1 119.4-134.3l-2.3-1.5c-37.5 10.8-61.9 20.4-112 20.3-39.6-0.1-84.1-10-122.1-20.5z"
+          color="#000000" color-rendering="auto" dominant-baseline="auto" image-rendering="auto" shape-rendering="auto"
+          solid-color="#000000"
+          style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;paint-order:markers fill stroke;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal" />
+        <path
+          d="m138.2 130.1c0 4.6-3.3 8.9-8.6 11.3-5.3 2.3-11.8 2.3-17.1 0-5.3-2.4-8.6-6.7-8.6-11.3 4.5-2.5 10.3-2.9 17.2-1.3 10.2-1.4 18.1-1.9 17.1 1.3z"
+          fill="#a00" style="paint-order:markers fill stroke" />
+      </g>
+      <path d="m120.7 130.1c-0.9 3.2-1.3 6.2-0.3 8.8" fill="#f55" stroke="#d40000" stroke-linecap="round"
+        stroke-width="2.6021" />
+      <path transform="matrix(.7868 0 0 .7962 25.63 26.49)"
+        d="m84.86 106.5c0 0.1-0.17 0.3-0.2 0.4l-0.88 3.2c-0.1 0.3 0 0.7 0.19 1 0.54 0.7 1.62 1.4 2.98 1.7 0.5 0.2 1 0.3 1.5 0.4 1.37 0.3 2.64 0.2 3.44-0.1 0.34-0.2 0.56-0.5 0.62-0.8l0.75-3.3c0-0.1 0.1-0.3 0-0.4-2.8-0.7-5.6-1.4-8.39-2.1zm8.99 2.2c-0.12 0.1-0.16 0.3-0.19 0.4l-0.74 3.3c-0.1 0.3 0 0.6 0.23 1 0.58 0.6 1.69 1.3 3.06 1.5l1.53 0.3c1.37 0.3 2.66 0.1 3.46-0.2 0.3-0.3 0.5-0.6 0.5-0.9l0.6-3.3c0-0.1 0.1-0.3 0.1-0.4-2.88-0.5-5.72-1.1-8.55-1.7zm9.05 1.8c-0.1 0.1-0.1 0.3-0.1 0.4l-0.6 3.3c0 0.3 0 0.6 0.3 1 0.6 0.6 1.7 1.2 3.1 1.4 0.5 0 1 0.1 1.6 0.2 1.4 0.2 2.6-0.1 3.3-0.5 0.4-0.3 0.6-0.5 0.6-0.8l0.4-3.4c0-0.1-0.1-0.3 0-0.4-2.9-0.3-5.8-0.7-8.6-1.2zm9 1.2v0.4l-0.3 3.4c-0.1 0.3 0 0.6 0.3 0.9 0.6 0.6 1.7 1.1 3.2 1.2 0.5 0.1 1 0.1 1.5 0.1 1.5 0.1 2.8-0.2 3.4-0.7 0.3-0.3 0.5-0.6 0.5-0.9l0.2-3.4c0-0.1-0.1-0.3-0.1-0.4-2.9-0.1-5.8-0.3-8.7-0.6zm9.2 0.6v0.4l-0.1 3.4c0 0.3 0 0.5 0.2 0.8l0.1 0.1c0.8 0.5 2 1 3.4 1 0.5 0 1-0.1 1.5-0.1 1.5 0 2.7-0.5 3.3-1 0.3-0.3 0.5-0.6 0.5-0.9l-0.2-3.4c0-0.1-0.1-0.3-0.1-0.4-2.8 0.2-5.6 0.2-8.3 0.1h-0.3zm9.2-0.1c-0.1 0.1-0.1 0.3-0.1 0.4l0.2 3.4c0 0.3 0.1 0.6 0.5 0.8 0.7 0.5 2 0.8 3.4 0.7 0.5-0.1 1-0.2 1.5-0.2 1.5-0.2 2.7-0.8 3.2-1.3 0.3-0.4 0.4-0.7 0.4-1l-0.5-3.4c0-0.1-0.2-0.3-0.2-0.4-2.8 0.5-5.6 0.8-8.4 1zm9-1c-0.1 0.1-0.1 0.3 0 0.4l0.5 3.3c0 0.3 0.2 0.6 0.5 0.8 0.8 0.4 2.2 0.6 3.5 0.3l1.5-0.3c1.5-0.3 2.6-1 3.2-1.7 0.1-0.3 0.2-0.6 0.1-0.9l-0.8-3.3c0-0.1-0.2-0.3-0.2-0.4-2.7 0.7-5.5 1.3-8.3 1.8zm8.9-1.9c-0.1 0.1-0.1 0.3 0 0.4l0.8 3.3c0.1 0.2 0.3 0.5 0.7 0.7 0.8 0.3 2.1 0.4 3.4-0.1 0.5-0.1 1-0.3 1.5-0.4 1.4-0.5 2.5-1.3 3-2 0.1-0.4 0.1-0.7 0-1l-1.2-3.2c0-0.1-0.2-0.2-0.2-0.3-2.6 1-5.3 1.8-8 2.6z"
+        fill="#fff" style="paint-order:markers fill stroke" />
+      <g transform="translate(0,8.136)">
+        <g transform="matrix(.6148 0 0 1 25.06 0)">
+          <g transform="matrix(-.378 0 0 -.378 145.9 126.3)">
+            <g transform="translate(-110.1,3.175)">
+              <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44" height="35.46"
+                fill="#0199fe" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.7376 -.6753 -.9399 -.3414 0 0)" x="-45.67" y="-219.5" width="16.02"
+                height="39.89" fill="#03b0fc" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.4733 -.8809 -.9844 -.1757 0 0)" x="-70.77" y="-216.9" width="13.86" height="43"
+                fill="#179ef0" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.0672 -.9977 -.9998 -.022 0 0)" x="-90.19" y="-191" width="12.8" height="44.29"
+                fill="#09d4fc" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.3659 -.9307 -.9915 .1301 0 0)" x="-114.4" y="-146.1" width="13.39"
+                height="43.59" fill="#188aef" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.6744 -.7384 -.9567 .291 0 0)" x="-145.2" y="-91.43" width="15.31" height="40.98"
+                fill="#1174f4" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.8487 -.5289 -.8821 .4711 0 0)" x="-174.1" y="-37.83" width="17.73"
+                height="36.88" fill="#17a6ec" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9399 -.3414 -.7376 .6753 0 0)" x="-189.8" y="5.804" width="19.94" height="32.04"
+                fill="#1789e6" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9844 -.1757 -.4733 .8809 0 0)" x="-184.9" y="36.27" width="21.5" height="27.72"
+                fill="#1094f5" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9998 -.022 -.0672 .9977 0 0)" x="-158" y="58.33" width="22.15" height="25.6"
+                fill="#068cf9" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9915 .1301 .3659 .9307 0 0)" x="-113.6" y="81.02" width="21.79" height="26.78"
+                fill="#13cfee" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9567 .291 .6744 .7384 0 0)" x="-60.92" y="107.1" width="20.49" height="30.62"
+                fill="#1581ea" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.8821 .4711 .8487 .5289 0 0)" x="-10.38" y="130" width="18.44" height="35.46"
+                fill="#1694f1" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.7376 .6753 .9399 .3414 0 0)" x="29.65" y="140.2" width="16.02" height="39.89"
+                fill="#1fa0e6" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.4733 .8809 .9844 .1757 0 0)" x="56.9" y="131.4" width="13.86" height="43"
+                fill="#036ffc" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.0672 .9977 .9998 .022 0 0)" x="77.39" y="102.9" width="12.8" height="44.29"
+                fill="#158fe8" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.3659 .9307 .9915 -.1301 0 0)" x="101" y="59.39" width="13.39" height="43.59"
+                fill="#1e7fe7" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.6744 .7384 .9567 -.291 0 0)" x="129.9" y="9.914" width="15.31" height="40.98"
+                fill="#0fbff6" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.8487 .5289 .8821 -.4711 0 0)" x="156.4" y="-35.51" width="17.73" height="36.88"
+                fill="#20c9e5" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9399 .3414 .7376 -.6753 0 0)" x="169.9" y="-69.53" width="19.94" height="32.04"
+                fill="#15b4ec" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9844 .1757 .4733 -.8809 0 0)" x="163.4" y="-91.41" width="21.5" height="27.72"
+                fill="#176fee" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9998 .022 .0672 -.9977 0 0)" x="135.8" y="-109.2" width="22.15" height="25.6"
+                fill="#1176ec" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9915 -.1301 -.3659 -.9307 0 0)" x="91.84" y="-134.3" width="21.79" height="26.78"
+                fill="#065ef7" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9567 -.291 -.6744 -.7384 0 0)" x="40.42" y="-168" width="20.49" height="30.62"
+                fill="#1da5e8" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44" height="35.46"
+                rx="9.219" ry="9.219" fill="#fff" style="paint-order:markers fill stroke" />
+            </g>
+          </g>
+          <g transform="matrix(-.1853 0 0 -.1853 160.3 108.6)" fill="#261d1b">
+            <g>
+              <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44" height="35.46"
+                fill="#171616" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.7376 -.6753 -.9399 -.3414 0 0)" x="-45.67" y="-219.5" width="16.02"
+                height="39.89" fill="#221a17" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.4733 -.8809 -.9844 -.1757 0 0)" x="-70.77" y="-216.9" width="13.86" height="43"
+                fill="#1f1514" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.0672 -.9977 -.9998 -.022 0 0)" x="-90.19" y="-191" width="12.8" height="44.29"
+                fill="#312726" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.3659 -.9307 -.9915 .1301 0 0)" x="-114.4" y="-146.1" width="13.39"
+                height="43.59" fill="#100d0d" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.6744 -.7384 -.9567 .291 0 0)" x="-145.2" y="-91.43" width="15.31" height="40.98"
+                fill="#090706" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.8487 -.5289 -.8821 .4711 0 0)" x="-174.1" y="-37.83" width="17.73"
+                height="36.88" fill="#2f2926" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9399 -.3414 -.7376 .6753 0 0)" x="-189.8" y="5.804" width="19.94" height="32.04"
+                fill="#292828" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9844 -.1757 -.4733 .8809 0 0)" x="-184.9" y="36.27" width="21.5" height="27.72"
+                fill="#0d0a0a" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9998 -.022 -.0672 .9977 0 0)" x="-158" y="58.33" width="22.15" height="25.6"
+                fill="#1f1a16" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9915 .1301 .3659 .9307 0 0)" x="-113.6" y="81.02" width="21.79" height="26.78"
+                fill="#070606" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.9567 .291 .6744 .7384 0 0)" x="-60.92" y="107.1" width="20.49" height="30.62"
+                fill="#171110" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.8821 .4711 .8487 .5289 0 0)" x="-10.38" y="130" width="18.44" height="35.46"
+                fill="#1a1919" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.7376 .6753 .9399 .3414 0 0)" x="29.65" y="140.2" width="16.02" height="39.89"
+                fill="#261e1d" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.4733 .8809 .9844 .1757 0 0)" x="56.9" y="131.4" width="13.86" height="43"
+                fill="#040303" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(-.0672 .9977 .9998 .022 0 0)" x="77.39" y="102.9" width="12.8" height="44.29"
+                fill="#171210" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.3659 .9307 .9915 -.1301 0 0)" x="101" y="59.39" width="13.39" height="43.59"
+                fill="#040303" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.6744 .7384 .9567 -.291 0 0)" x="129.9" y="9.914" width="15.31" height="40.98"
+                fill="#212020" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.8487 .5289 .8821 -.4711 0 0)" x="156.4" y="-35.51" width="17.73" height="36.88"
+                fill="#1d1b1a" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9399 .3414 .7376 -.6753 0 0)" x="169.9" y="-69.53" width="19.94" height="32.04"
+                fill="#0c0a09" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9844 .1757 .4733 -.8809 0 0)" x="163.4" y="-91.41" width="21.5" height="27.72"
+                fill="#312524" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9998 .022 .0672 -.9977 0 0)" x="135.8" y="-109.2" width="22.15" height="25.6"
+                fill="#0e0c0b" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9915 -.1301 -.3659 -.9307 0 0)" x="91.84" y="-134.3" width="21.79" height="26.78"
+                fill="#191716" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.9567 -.291 -.6744 -.7384 0 0)" x="40.42" y="-168" width="20.49" height="30.62"
+                fill="#2a2827" style="paint-order:markers fill stroke" />
+              <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44" height="35.46"
+                rx="9.219" ry="9.219" fill="#110d0c" style="paint-order:markers fill stroke" />
+            </g>
+          </g>
+        </g>
+        <circle cx="111.8" cy="90.45" r="1.279" fill="#fff" style="paint-order:markers fill stroke" />
+        <circle cx="107.5" cy="92.29" r="10.14" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel"
+          stroke-width=".9407" style="paint-order:markers fill stroke" />
+      </g>
+      <g transform="translate(0,8.136)">
+        <g transform="translate(27.69)">
+          <g transform="matrix(.6148 0 0 1 25.06 0)">
+            <g transform="matrix(-.378 0 0 -.378 145.9 126.3)">
+              <g transform="translate(-110.1,3.175)">
+                <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44"
+                  height="35.46" fill="#0199fe" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.7376 -.6753 -.9399 -.3414 0 0)" x="-45.67" y="-219.5" width="16.02"
+                  height="39.89" fill="#03b0fc" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.4733 -.8809 -.9844 -.1757 0 0)" x="-70.77" y="-216.9" width="13.86" height="43"
+                  fill="#179ef0" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.0672 -.9977 -.9998 -.022 0 0)" x="-90.19" y="-191" width="12.8" height="44.29"
+                  fill="#09d4fc" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.3659 -.9307 -.9915 .1301 0 0)" x="-114.4" y="-146.1" width="13.39"
+                  height="43.59" fill="#188aef" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.6744 -.7384 -.9567 .291 0 0)" x="-145.2" y="-91.43" width="15.31"
+                  height="40.98" fill="#1174f4" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.8487 -.5289 -.8821 .4711 0 0)" x="-174.1" y="-37.83" width="17.73"
+                  height="36.88" fill="#17a6ec" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9399 -.3414 -.7376 .6753 0 0)" x="-189.8" y="5.804" width="19.94"
+                  height="32.04" fill="#1789e6" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9844 -.1757 -.4733 .8809 0 0)" x="-184.9" y="36.27" width="21.5"
+                  height="27.72" fill="#1094f5" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9998 -.022 -.0672 .9977 0 0)" x="-158" y="58.33" width="22.15" height="25.6"
+                  fill="#068cf9" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9915 .1301 .3659 .9307 0 0)" x="-113.6" y="81.02" width="21.79" height="26.78"
+                  fill="#13cfee" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9567 .291 .6744 .7384 0 0)" x="-60.92" y="107.1" width="20.49" height="30.62"
+                  fill="#1581ea" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.8821 .4711 .8487 .5289 0 0)" x="-10.38" y="130" width="18.44" height="35.46"
+                  fill="#1694f1" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.7376 .6753 .9399 .3414 0 0)" x="29.65" y="140.2" width="16.02" height="39.89"
+                  fill="#1fa0e6" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.4733 .8809 .9844 .1757 0 0)" x="56.9" y="131.4" width="13.86" height="43"
+                  fill="#036ffc" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.0672 .9977 .9998 .022 0 0)" x="77.39" y="102.9" width="12.8" height="44.29"
+                  fill="#158fe8" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.3659 .9307 .9915 -.1301 0 0)" x="101" y="59.39" width="13.39" height="43.59"
+                  fill="#1e7fe7" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.6744 .7384 .9567 -.291 0 0)" x="129.9" y="9.914" width="15.31" height="40.98"
+                  fill="#0fbff6" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.8487 .5289 .8821 -.4711 0 0)" x="156.4" y="-35.51" width="17.73" height="36.88"
+                  fill="#20c9e5" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9399 .3414 .7376 -.6753 0 0)" x="169.9" y="-69.53" width="19.94" height="32.04"
+                  fill="#15b4ec" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9844 .1757 .4733 -.8809 0 0)" x="163.4" y="-91.41" width="21.5" height="27.72"
+                  fill="#176fee" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9998 .022 .0672 -.9977 0 0)" x="135.8" y="-109.2" width="22.15" height="25.6"
+                  fill="#1176ec" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9915 -.1301 -.3659 -.9307 0 0)" x="91.84" y="-134.3" width="21.79"
+                  height="26.78" fill="#065ef7" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9567 -.291 -.6744 -.7384 0 0)" x="40.42" y="-168" width="20.49" height="30.62"
+                  fill="#1da5e8" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44"
+                  height="35.46" rx="9.219" ry="9.219" fill="#fff" style="paint-order:markers fill stroke" />
+              </g>
+            </g>
+            <g transform="matrix(-.1853 0 0 -.1853 160.3 108.6)" fill="#261d1b">
+              <g>
+                <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44"
+                  height="35.46" fill="#171616" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.7376 -.6753 -.9399 -.3414 0 0)" x="-45.67" y="-219.5" width="16.02"
+                  height="39.89" fill="#221a17" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.4733 -.8809 -.9844 -.1757 0 0)" x="-70.77" y="-216.9" width="13.86" height="43"
+                  fill="#1f1514" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.0672 -.9977 -.9998 -.022 0 0)" x="-90.19" y="-191" width="12.8" height="44.29"
+                  fill="#312726" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.3659 -.9307 -.9915 .1301 0 0)" x="-114.4" y="-146.1" width="13.39"
+                  height="43.59" fill="#100d0d" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.6744 -.7384 -.9567 .291 0 0)" x="-145.2" y="-91.43" width="15.31"
+                  height="40.98" fill="#090706" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.8487 -.5289 -.8821 .4711 0 0)" x="-174.1" y="-37.83" width="17.73"
+                  height="36.88" fill="#2f2926" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9399 -.3414 -.7376 .6753 0 0)" x="-189.8" y="5.804" width="19.94"
+                  height="32.04" fill="#292828" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9844 -.1757 -.4733 .8809 0 0)" x="-184.9" y="36.27" width="21.5"
+                  height="27.72" fill="#0d0a0a" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9998 -.022 -.0672 .9977 0 0)" x="-158" y="58.33" width="22.15" height="25.6"
+                  fill="#1f1a16" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9915 .1301 .3659 .9307 0 0)" x="-113.6" y="81.02" width="21.79" height="26.78"
+                  fill="#070606" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.9567 .291 .6744 .7384 0 0)" x="-60.92" y="107.1" width="20.49" height="30.62"
+                  fill="#171110" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.8821 .4711 .8487 .5289 0 0)" x="-10.38" y="130" width="18.44" height="35.46"
+                  fill="#1a1919" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.7376 .6753 .9399 .3414 0 0)" x="29.65" y="140.2" width="16.02" height="39.89"
+                  fill="#261e1d" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.4733 .8809 .9844 .1757 0 0)" x="56.9" y="131.4" width="13.86" height="43"
+                  fill="#040303" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(-.0672 .9977 .9998 .022 0 0)" x="77.39" y="102.9" width="12.8" height="44.29"
+                  fill="#171210" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.3659 .9307 .9915 -.1301 0 0)" x="101" y="59.39" width="13.39" height="43.59"
+                  fill="#040303" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.6744 .7384 .9567 -.291 0 0)" x="129.9" y="9.914" width="15.31" height="40.98"
+                  fill="#212020" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.8487 .5289 .8821 -.4711 0 0)" x="156.4" y="-35.51" width="17.73" height="36.88"
+                  fill="#1d1b1a" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9399 .3414 .7376 -.6753 0 0)" x="169.9" y="-69.53" width="19.94" height="32.04"
+                  fill="#0c0a09" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9844 .1757 .4733 -.8809 0 0)" x="163.4" y="-91.41" width="21.5" height="27.72"
+                  fill="#312524" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9998 .022 .0672 -.9977 0 0)" x="135.8" y="-109.2" width="22.15" height="25.6"
+                  fill="#0e0c0b" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9915 -.1301 -.3659 -.9307 0 0)" x="91.84" y="-134.3" width="21.79"
+                  height="26.78" fill="#191716" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.9567 -.291 -.6744 -.7384 0 0)" x="40.42" y="-168" width="20.49" height="30.62"
+                  fill="#2a2827" style="paint-order:markers fill stroke" />
+                <rect transform="matrix(.8821 -.4711 -.8487 -.5289 0 0)" x="-8.06" y="-200.5" width="18.44"
+                  height="35.46" rx="9.219" ry="9.219" fill="#110d0c" style="paint-order:markers fill stroke" />
+              </g>
+            </g>
+          </g>
+          <circle cx="111.8" cy="90.45" r="1.279" fill="#fff" style="paint-order:markers fill stroke" />
+        </g>
+        <circle cx="135.2" cy="92.29" r="10.14" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel"
+          stroke-width=".9407" style="paint-order:markers fill stroke" />
+      </g>
+    </g>
+  </g>
+</svg>
+
+<!-- svg -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="hider">
+    <span>Įkeliama...</span>
+    <div id="spiner"></div>
+  </div>
+  <script>
+    ;
+    (function () {
+      window.onload = () => {
+        document.getElementsByClassName("hider")[0].classList.add("hid");
+        document.getElementById('content').focus();
+        document.addEventListener("click", navigate);
+        var elmnt = document.getElementById("content");
+
+        function getwidth() {
+          return elmnt.offsetHeight + 20
+        };
+
+        function navigate(e) {
+          if (e.target.id === "drodyk") {
+            elmnt.scrollTop += getwidth();
+          }
+          if (e.target.id === "krodyk") {
+            elmnt.scrollTop -= getwidth();
+          }
+        }
+
+        window.onkeydown = function (event) {
+          if (event.keyCode == 39) {
+            elmnt.scrollTop += getwidth();
+          }
+          if (event.keyCode == 37) {
+            elmnt.scrollTop -= getwidth();
+          }
+        };
+      }
+    })();
+  </script>
+</body>
+
+</html>
