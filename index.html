@@ -942,32 +942,24 @@
     ;
     (function () {
       window.onload = () => {
+        var elmnt = document.getElementById("content");
         document.getElementsByClassName("hider")[0].classList.add("hid");
         document.getElementById('content').focus();
-        document.addEventListener("click", navigate);
-        var elmnt = document.getElementById("content");
+        document.addEventListener("click", navigate.bind(elmnt));
 
         function getwidth() {
-          return elmnt.offsetHeight + 20
-        };
+          return this.offsetHeight + 20
+        }
 
         function navigate(e) {
-          if (e.target.id === "drodyk") {
-            elmnt.scrollTop += getwidth();
-          }
-          if (e.target.id === "krodyk") {
-            elmnt.scrollTop -= getwidth();
-          }
+          if (e.target.id === "drodyk") this.scrollTop += getwidth.call(this)          
+          if (e.target.id === "krodyk") this.scrollTop -= getwidth.call(this)          
         }
 
         window.onkeydown = function (event) {
-          if (event.keyCode == 39) {
-            elmnt.scrollTop += getwidth();
-          }
-          if (event.keyCode == 37) {
-            elmnt.scrollTop -= getwidth();
-          }
-        };
+          if (event.keyCode == 39) this.scrollTop += getwidth.call(this)
+          if (event.keyCode == 37) this.scrollTop -= getwidth.call(this)
+        }.bind(elmnt)
       }
     })();
   </script>
